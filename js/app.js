@@ -1,5 +1,12 @@
 
 var cats = $(".cat");
+var buttons = $("button");
+
+function hideAllCats(){
+	for (var i=0; i<cats.length; i++) {
+		$(cats[i]).hide();
+	}
+}
 
 function bindCounterToCat(idNumber) {
 	var cat = "#cat" + idNumber;
@@ -15,3 +22,5 @@ function bindCounterToCat(idNumber) {
 for (var i=1; i<=cats.length; i++) {
 	bindCounterToCat(i)
 }
+
+hideAllCats();
