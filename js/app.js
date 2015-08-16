@@ -10,7 +10,6 @@ function hideAllCats(){
 
 function bindCounterToCat(idNumber) {
 	var cat = "#cat" + idNumber;
-	console.log(cat)
 	$(cat).click(function(e) {
 		var count = $(cat + " > .counter").text();
 		count = parseInt(count) + 1;
@@ -18,6 +17,18 @@ function bindCounterToCat(idNumber) {
 	})
 }
 
+function bindButtonTocat(idNumber){
+	$("#button" + idNumber).click(function(){
+		console.log("#cat" + idNumber);
+		hideAllCats();
+		$("#cat" + idNumber).show();
+	})
+}
+
+for (var i=1; i<=buttons.length; i++){
+	console.log(i)
+	bindButtonTocat(i);
+}
 
 for (var i=1; i<=cats.length; i++) {
 	bindCounterToCat(i)
