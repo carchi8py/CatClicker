@@ -67,11 +67,15 @@ var octopus = {
     incrementCounter: function() {
         model.currentCat.clickCount++;
         catView.render();
-    }
+    },
 
     // Open view when pushing the admin button
+    openAdminMode: function() {
+    	model.adminOn = 1;
+    	adminView.open();
+    }
 
-    //Close the view when your push cancle
+    //Close the view when your push cancel
 
     //Update the view when your hit submit
 };
@@ -83,6 +87,18 @@ var adminView = {
 
 	init: function() {
 		$("#admin-controls").hide()
+		var adminBtn = $('.admin-mode');
+		adminBtn.click(function() {
+			octopus.openAdminMode();
+		});
+	},
+	open: function() {
+		$("#admin-controls").show();
+		var currentCat = octopus.getCurrentCat();
+		document.getElementById("cat-name-text").value = currentCat.name;
+		document.getElementById("cat-img-text").value = currentCat.imgSrc;
+		document.getElementById("cat-count-text").value = currentCat.clickCount;
+
 	}
 };
 
