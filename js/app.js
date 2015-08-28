@@ -73,9 +73,14 @@ var octopus = {
     openAdminMode: function() {
     	model.adminOn = 1;
     	adminView.open();
-    }
+    },
 
     //Close the view when your push cancel
+    closeAdminMode: function() {
+    	model.adminOn = 0;
+    	console.log("hi")
+    	adminView.init();
+    }
 
     //Update the view when your hit submit
 };
@@ -98,6 +103,11 @@ var adminView = {
 		document.getElementById("cat-name-text").value = currentCat.name;
 		document.getElementById("cat-img-text").value = currentCat.imgSrc;
 		document.getElementById("cat-count-text").value = currentCat.clickCount;
+
+		var cancelBtn = $('.cancel-button');
+		cancelBtn.click(function() {
+			octopus.closeAdminMode();
+		})
 
 	}
 };
