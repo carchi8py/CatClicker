@@ -2,6 +2,7 @@
 
 var model = {
 	currentCat: null,
+	adminOn: 0,
 	cats: [
 		{
 			clickCount : 0,
@@ -46,6 +47,7 @@ var octopus = {
         // tell our views to initialize
         catListView.init();
         catView.init();
+        adminView.init();
     },
 
     getCurrentCat: function() {
@@ -76,6 +78,13 @@ var octopus = {
 
 
 /* ======= View ======= */
+
+var adminView = {
+
+	init: function() {
+		$("#admin-controls").hide()
+	}
+};
 
 var catView = {
 
