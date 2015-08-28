@@ -66,6 +66,12 @@ var octopus = {
         model.currentCat.clickCount++;
         catView.render();
     }
+
+    // Open view when pushing the admin button
+
+    //Close the view when your push cancle
+
+    //Update the view when your hit submit
 };
 
 
