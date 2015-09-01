@@ -78,7 +78,6 @@ var octopus = {
     //Close the view when your push cancel
     closeAdminMode: function() {
     	model.adminOn = 0;
-    	console.log("hi")
     	adminView.init();
     }
 
