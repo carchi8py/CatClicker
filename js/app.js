@@ -26,11 +26,16 @@ var Cat = function() {
 }
 
 var ViewModel = function() {
+	//store the out this (ViewModel) this, and not the CAT this.
+	//I am not using this, but i want to keep it here so i know
+	var self = this;
 
 	this.currentCat = ko.observable( new Cat() );
 
+	//Because we are using with in the HTML this is now inside the CAT binding
+	//context and not the viewModel
 	this.incrementCounter = function() {
-		this.currentCat().clickCount(this.currentCat().clickCount() + 1);
+		this.clickCount(this.clickCount() + 1);
 	};
 }
 
